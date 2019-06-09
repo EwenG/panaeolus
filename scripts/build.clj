@@ -9,7 +9,7 @@
 
 (defn -main []
   (clean/clean "target")
-  (compile/compile '[panaeolus.all]
+  (compile/compile '[panaeolus.all clojure.core.specs.alpha]
                    {:compile-path "target/classes"
                     :compiler-options {:disable-locals-clearing false
                                        :direct-linking true}
