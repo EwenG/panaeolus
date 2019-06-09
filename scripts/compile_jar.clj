@@ -9,11 +9,11 @@
             [clojure.walk :as walk]
             [clojure.tools.deps.alpha :as deps]
             [clojure.tools.deps.alpha.reader :as deps-reader]
-            [panaeolus.all :as panaeolus]
-            [panaeolus.libcsound64 :as libcsound64]
-            [overtone.ableton-link :refer [spit-abletonlink-lib!]]
+            #_[panaeolus.all :as panaeolus]
+            #_[panaeolus.libcsound64 :as libcsound64]
+            #_[overtone.ableton-link :refer [spit-abletonlink-lib!]]
             [clojure.java.shell :refer [sh]])
-  (:import [net.lingala.zip4j.core ZipFile]
+  #_(:import [net.lingala.zip4j.core ZipFile]
            [net.lingala.zip4j.exception ZipException]))
 
 (def +version+ "0.4.0-SNAPSHOT")
@@ -22,7 +22,8 @@
   (re-find #"[Ww]indows"
            (System/getProperty "os.name")))
 
-(defn unzip-file
+(declare unzip-file)
+#_(defn unzip-file
   [zip dest]
   (try
     (-> (ZipFile. zip)
@@ -116,8 +117,8 @@
         edn/read-string
         canonicalize-all-syms)))
 
-(libcsound64/spit-csound! "native")
-(spit-abletonlink-lib! "native")
+#_(libcsound64/spit-csound! "native")
+#_(spit-abletonlink-lib! "native")
 
 (defn -main []
   (println "cleaning target...")
@@ -171,3 +172,4 @@
       :libs-path "lib"
       })
   (System/exit 0))
+

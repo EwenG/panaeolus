@@ -4,7 +4,7 @@
 
 (set! *warn-on-reflection* true)
 
-(link/enable-link true)
+#_(link/enable-link true)
 
 (defn set-bpm [bpm]
   (link/set-bpm bpm))
@@ -12,4 +12,4 @@
 (defn get-bpm []
   (link/get-bpm))
 
-(set-bpm (or (:bpm config) 120))
+#_(set-bpm (or (:bpm config) 120))
