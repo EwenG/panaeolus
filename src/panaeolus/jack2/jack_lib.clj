@@ -21,7 +21,7 @@
                (EnumSet/of JackOptions/JackNoStartServer)
                nil))
 
-(def jack-client nil #_(open-client "__jnajack__"))
+(def jack-client (open-client "__jnajack__"))
 
 (defn connect [from-out to-in]
   ;; (prn "CONNECT FROM OUT" from-out "TO IN" to-in)
